@@ -70,3 +70,4 @@ main () at p1final.c:25
 (gdb) c
 Continuing.
 [Inferior 1 (process 876) exited normally]
+
