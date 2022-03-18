@@ -1,0 +1,104 @@
+(gdb) b main
+Breakpoint 1 at 0x7d7: file p1final.c, line 20.
+(gdb) r
+Starting program: /home/runner/IA2-Test1-Session2-3/a.out 
+warning: Error disabling address space randomization: Operation not permitted
+
+Breakpoint 1, main () at p1final.c:20
+20  {
+(gdb) n
+22    input(&x,&y);
+(gdb) s
+input (b=0x7fff541ee1dc, h=0x7fff541ee1e0) at p1final.c:5
+5     printf ("Enter the base and height of the triangle: \t");
+(gdb) n
+6     scanf ("%f %f",b,h);
+(gdb) n
+Enter the base and height of the triangle:  1 2
+7   }
+(gdb) n
+main () at p1final.c:23
+23    find_area(x,y,&a);
+(gdb) s
+(gdb) b main
+Breakpoint 1 at 0x7d7: file p1final.c, line 20.
+(gdb) r
+Starting program: /home/runner/IA2-Test1-Session2-3/a.out 
+warning: Error disabling address space randomization: Operation not permitted
+
+Breakpoint 1, main () at p1final.c:20
+20  {
+(gdb) n
+22    input(&x,&y);
+(gdb) s
+input (b=0x7ffff2a5476c, h=0x7ffff2a54770) at p1final.c:5
+5     printf ("Enter the base and height of the triangle: \t");
+(gdb) n
+6     scanf ("%f %f",b,h);
+(gdb) n
+Enter the base and height of the triangle:  2 1
+7   }
+(gdb) n
+main () at p1final.c:23
+23    find_area(x,y,&a);
+(gdb) s
+find_area (b=2, h=1, area=0x7ffff2a54774) at p1final.c:11
+(gdb) b main
+Breakpoint 1 at 0x801: file p2final.c, line 32.
+(gdb) r
+Starting program: /home/runner/IA2-Test1-Session2-3/a.out 
+warning: Error disabling address space randomization: Operation not permitted
+
+Breakpoint 1, main () at p2final.c:32
+32    x=input_side();
+(gdb) s
+input_side () at p2final.c:4
+4   {
+(gdb) n
+6     printf ("Enter a side:\t");
+(gdb) n
+7     scanf ("%d",&s);
+(gdb) n
+Enter a side:   3
+8     return s;
+(gdb) n
+9   }
+(gdb) p s
+$1 = 3
+(gdb) n
+main () at p2final.c:33
+33    y=input_side();
+(gdb) n
+Enter a side:   4
+34    z=input_side();
+(gdb) n
+Enter a side:   5
+35    sc=check_scalene(x,y,z);
+(gdb) s
+check_scalene (a=3, b=4, c=5) at p2final.c:14
+14    if(a!=b&&b!=c&&c!=a)
+(gdb) n
+15    isscalene=1;
+(gdb) n
+18    return isscalene;
+(gdb) n
+19  }
+(gdb) p isscalene
+$2 = 1
+(gdb) n
+main () at p2final.c:36
+36    output(x,y,z,sc);
+(gdb) s
+output (a=3, b=4, c=5, isscalene=1) at p2final.c:23
+23    if(isscalene==1)
+(gdb) n
+24    printf("Triangle with sides %d,%d & %d is scalene.",a,b,c);
+(gdb) n
+27  }
+(gdb) n
+main () at p2final.c:37
+37    return 0;
+(gdb) n
+38  }(gdb) c
+Continuing.
+Triangle with sides 3,4 & 5 is scalene.[Inferior 1 (process 1237) exited normally]
