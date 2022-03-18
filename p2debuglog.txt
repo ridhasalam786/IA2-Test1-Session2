@@ -102,3 +102,4 @@ main () at p2final.c:37
 38  }(gdb) c
 Continuing.
 Triangle with sides 3,4 & 5 is scalene.[Inferior 1 (process 1237) exited normally]
+
